@@ -1,0 +1,19 @@
+bc path:
+/data2/yizhuo/inc-experiment/experiment/bc-v5.6
+
+json path:
+/data2/yizhuo/inc-experiment/se-experiment/threshold_experiment/rsrc_nonstatic
+
+sudo apt install libsqlite3-dev
+
+-DLLVM_CONFIG_BINARY=/home/yhao/data/yizhuo/build/bin/llvm-config
+-DENABLE_SOLVER_Z3=ON
+-DZ3_INCLUDE_DIRS=/home/yhao/data/yizhuo/build/include
+-DZ3_LIBRARIES=/home/yhao/data/yizhuo/build/lib/libz3.so
+-DENABLE_UNIT_TESTS=OFF
+-DENABLE_SYSTEM_TESTS=OFF
+-DENABLE_TCMALLOC=OFF
+
+cmake -DCMAKE_BUILD_TYPE=Debug -DLLVM_CONFIG_BINARY=/home/yhao/data/yizhuo/build/bin/llvm-config -DENABLE_SOLVER_Z3=ON -DZ3_INCLUDE_DIRS=/home/yhao/data/yizhuo/build/include -DZ3_LIBRARIES=/home/yhao/data/yizhuo/build/lib/libz3.so -DENABLE_UNIT_TESTS=OFF -DENABLE_SYSTEM_TESTS=OFF -DENABLE_TCMALLOC=OFF -G "CodeBlocks - Unix Makefiles" /home/yhao/data/yizhuo/yzklee
+
+/home/yhao/data/yizhuo/yzklee/cmake-build-debug/bin/klee -json='{"aliasNum": 4, "alt-blist": [], "argNo": -1, "bc": "drivers/pcmcia/rsrc_nonstatic.bc", "blacklist": ["-home-ubuntu-experiment-lll-56-drivers-pcmcia-rsrc_nonstatic.llbc-nonstatic_find_mem_region-13", "-home-ubuntu-experiment-lll-56-drivers-pcmcia-rsrc_nonstatic.llbc-nonstatic_find_mem_region-21", "-home-ubuntu-experiment-lll-56-drivers-pcmcia-rsrc_nonstatic.llbc-nonstatic_find_mem_region-24", "-home-ubuntu-experiment-lll-56-drivers-pcmcia-rsrc_nonstatic.llbc-nonstatic_find_mem_region-25", "-home-ubuntu-experiment-lll-56-drivers-pcmcia-rsrc_nonstatic.llbc-nonstatic_find_mem_region-26"], "colNo": "7", "fieldNo": -1, "function": "nonstatic_find_mem_region", "id": "drivers/pcmcia/rsrc_nonstatic.bc_nonstatic_find_mem_region_%ret$obj", "lineNo": "844", "rank": "DATA", "type": "stack", "use": "-home-ubuntu-experiment-lll-56-drivers-pcmcia-rsrc_nonstatic.llbc-nonstatic_find_mem_region-19", "warning": "  %37 = load i32, i32* %ret, align 4, !dbg !4751", "whitelist": ["-home-ubuntu-experiment-lll-56-drivers-pcmcia-rsrc_nonstatic.llbc-nonstatic_find_mem_region-0"]}'  -fjson=./hybridCG.json ./built-in.bc 1>log.txt 2>&1
