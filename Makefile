@@ -13,7 +13,7 @@ build_increlux_func = \
 		     LLVM_INCLUDE_DIRS=${LLVM_BUILD}/include \
 		     CC=clang  CXX=clang++ \
 		     cmake ${1} -DCMAKE_BUILD_TYPE=Release \
-		     -DCMAKE_CXX_FLAGS_RELEASE="-std=c++1y -frtti -fpic" \
+		     -DCMAKE_CXX_FLAGS_RELEASE="-std=c++1y -frtti -fpic -L/usr/local/lib -lboost_serialization" \
 		     && make -j${NPROC})
 
 all: increlux
