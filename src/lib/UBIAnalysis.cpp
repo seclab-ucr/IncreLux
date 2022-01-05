@@ -53,6 +53,8 @@ using namespace llvm;
 #define REST_F
 //#define _PRINT_STMAP
 #define CAL_REC
+std::string diffMd="";
+std::string diffFunctions = "";
 //#define _PRINT_MODIFIEDFUNCS
 //#define LOADING_DBG
 //#define CG_JSON
