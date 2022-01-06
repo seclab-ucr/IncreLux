@@ -77,7 +77,7 @@ struct GlobalContext {
     //std::string jsonInc = "/data/home/yizhuo/experiment/lll-56-7/warninc2.json";
     //std::string jsonfile = "/home/yizhuo/experiment/PerPatchTest/lll-414-def/warn.json";
     std::string absPath = "/home/yzhai003/inc-experiment/lll-v4.14/";
-    std::string outFolder = "/home/yzhai003/inc-experiment/lll-v4.14/ubi-ia-out/";
+    std::string outFolder = "/home/yzhai003/IncreLux/example/v4.14/ubi-ia-out/";
     std::string incFolder = "/home/ubuntu/experiment/lll-v5.6.2/ia-out/";
     std::string newVersion = "lll-v5.6.2_";
     std::string oldVersion = "lll-v5.6.1_";
