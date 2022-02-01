@@ -1236,6 +1236,9 @@ void FuncAnalysis::checkFuncs(llvm::Instruction *I, llvm::Function *Callee) {
             Callee = FIter->second;
         }
     }
+    if (Ctx->FSummaries.find(Callee) == Ctx->FSummaries.end()) {
+    	return;
+    }
     if (Ctx->incAnalysis && Ctx->FSummaries.find(Callee) == Ctx->FSummaries.end())
     {
         //assert(Ctx->modifiedFuncs.find(Callee) == Ctx->modifiedFuncs.end() && "modifiedFuncs not summarized before being called.");

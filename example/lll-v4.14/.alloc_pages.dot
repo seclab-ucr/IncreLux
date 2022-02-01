@@ -1,0 +1,5 @@
+digraph "CFG for 'alloc_pages' function" {
+	label="CFG for 'alloc_pages' function";
+
+	Node0x561b9494b4e0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-a\l...lloc_pages-0:\l  %gfp_mask.addr = alloca i32, align 4\l  %order.addr = alloca i32, align 4\l  store i32 %gfp_mask, i32* %gfp_mask.addr, align 4\l  call void @llvm.dbg.declare(metadata i32* %gfp_mask.addr, metadata !6073,\l... metadata !DIExpression()), !dbg !6074\l  store i32 %order, i32* %order.addr, align 4\l  call void @llvm.dbg.declare(metadata i32* %order.addr, metadata !6075,\l... metadata !DIExpression()), !dbg !6076\l  %0 = load i32, i32* %gfp_mask.addr, align 4, !dbg !6077\l  %1 = load i32, i32* %order.addr, align 4, !dbg !6078\l  %call = call %struct.page* @alloc_pages_current(i32 %0, i32 %1) #8, !dbg\l... !6079\l  ret %struct.page* %call, !dbg !6080\l}"];
+}

@@ -1,4 +1,4 @@
-set (UBITectSourceCodes
+set (IncreLuxSourceCodes
 	UBIAnalysis.h
 	UBIAnalysis.cpp
 	#Points-to CG
@@ -33,16 +33,16 @@ set (UBITectSourceCodes
 )
 
 # Build libraries.
-add_library (UBITectObj OBJECT ${UBITectSourceCodes})
-add_library (UBITect SHARED $<TARGET_OBJECTS:UBITectObj>)
-add_library (UBITectStatic STATIC $<TARGET_OBJECTS:UBITectObj>)
+add_library (IncreLuxObj OBJECT ${IncreLuxSourceCodes})
+add_library (IncreLux SHARED $<TARGET_OBJECTS:IncreLuxObj>)
+add_library (IncreLuxStatic STATIC $<TARGET_OBJECTS:IncreLuxObj>)
 llvm_map_components_to_libnames(llvm_libs bitwriter core ipo irreader instcombine instrumentation target linker analysis scalaropts support)
 # Build executable ubitect.
-set (EXECUTABLE_OUTPUT_PATH ${UBITECT_BINARY_DIR})
-link_directories (${UBITECT_BINARY_DIR}/lib)
+set (EXECUTABLE_OUTPUT_PATH ${INCRELUX_BINARY_DIR})
+link_directories (${INCRELUX_BINARY_DIR}/lib)
 #project (ubitect C CXX)
-add_executable(ubitect ${UBITectSourceCodes})
-target_link_libraries(ubitect 
+add_executable(increlux ${IncreLuxSourceCodes})
+target_link_libraries(increlux 
   ${llvm_libs}
   LLVMAsmParser 
   LLVMSupport 
@@ -50,5 +50,5 @@ target_link_libraries(ubitect
   LLVMAnalysis
   LLVMIRReader
   LLVMTransformUtils
-  UBITectStatic
+  IncreLuxStatic
   )

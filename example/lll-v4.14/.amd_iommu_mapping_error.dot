@@ -1,0 +1,5 @@
+digraph "CFG for 'amd_iommu_mapping_error' function" {
+	label="CFG for 'amd_iommu_mapping_error' function";
+
+	Node0x561b94945030 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-a\l...md_iommu_mapping_error-0:\l  %dev.addr = alloca %struct.device*, align 8\l  %dma_addr.addr = alloca i64, align 8\l  store %struct.device* %dev, %struct.device** %dev.addr, align 8\l  call void @llvm.dbg.declare(metadata %struct.device** %dev.addr, metadata\l... !6070, metadata !DIExpression()), !dbg !6071\l  store i64 %dma_addr, i64* %dma_addr.addr, align 8\l  call void @llvm.dbg.declare(metadata i64* %dma_addr.addr, metadata !6072,\l... metadata !DIExpression()), !dbg !6073\l  %0 = load i64, i64* %dma_addr.addr, align 8, !dbg !6074\l  %cmp = icmp eq i64 %0, 0, !dbg !6075\l  %conv = zext i1 %cmp to i32, !dbg !6075\l  ret i32 %conv, !dbg !6076\l}"];
+}

@@ -1,0 +1,5 @@
+digraph "CFG for 'get_dev_data' function" {
+	label="CFG for 'get_dev_data' function";
+
+	Node0x561b945a20b0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-g\l...et_dev_data-0:\l  %dev.addr = alloca %struct.device*, align 8\l  store %struct.device* %dev, %struct.device** %dev.addr, align 8\l  call void @llvm.dbg.declare(metadata %struct.device** %dev.addr, metadata\l... !6072, metadata !DIExpression()), !dbg !6073\l  %0 = load %struct.device*, %struct.device** %dev.addr, align 8, !dbg !6074\l  %archdata = getelementptr inbounds %struct.device, %struct.device* %0, i32\l... 0, i32 25, !dbg !6075\l  %iommu = getelementptr inbounds %struct.dev_archdata, %struct.dev_archdata*\l... %archdata, i32 0, i32 0, !dbg !6076\l  %1 = load i8*, i8** %iommu, align 8, !dbg !6076\l  %2 = bitcast i8* %1 to %struct.iommu_dev_data*, !dbg !6074\l  ret %struct.iommu_dev_data* %2, !dbg !6077\l}"];
+}

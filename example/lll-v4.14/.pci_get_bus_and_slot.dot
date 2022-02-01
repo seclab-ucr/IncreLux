@@ -1,0 +1,5 @@
+digraph "CFG for 'pci_get_bus_and_slot' function" {
+	label="CFG for 'pci_get_bus_and_slot' function";
+
+	Node0x561b946d3950 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-p\l...ci_get_bus_and_slot-0:\l  %bus.addr = alloca i32, align 4\l  %devfn.addr = alloca i32, align 4\l  store i32 %bus, i32* %bus.addr, align 4\l  call void @llvm.dbg.declare(metadata i32* %bus.addr, metadata !6072,\l... metadata !DIExpression()), !dbg !6073\l  store i32 %devfn, i32* %devfn.addr, align 4\l  call void @llvm.dbg.declare(metadata i32* %devfn.addr, metadata !6074,\l... metadata !DIExpression()), !dbg !6075\l  %0 = load i32, i32* %bus.addr, align 4, !dbg !6076\l  %1 = load i32, i32* %devfn.addr, align 4, !dbg !6077\l  %call = call %struct.pci_dev* @pci_get_domain_bus_and_slot(i32 0, i32 %0,\l... i32 %1) #8, !dbg !6078\l  ret %struct.pci_dev* %call, !dbg !6079\l}"];
+}

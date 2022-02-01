@@ -1,0 +1,5 @@
+digraph "CFG for '__amd_iommu_flush_tlb' function" {
+	label="CFG for '__amd_iommu_flush_tlb' function";
+
+	Node0x561b946bc950 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-_\l..._amd_iommu_flush_tlb-0:\l  %domain.addr = alloca %struct.protection_domain*, align 8\l  %pasid.addr = alloca i32, align 4\l  store %struct.protection_domain* %domain, %struct.protection_domain**\l... %domain.addr, align 8\l  call void @llvm.dbg.declare(metadata %struct.protection_domain**\l... %domain.addr, metadata !6072, metadata !DIExpression()), !dbg !6073\l  store i32 %pasid, i32* %pasid.addr, align 4\l  call void @llvm.dbg.declare(metadata i32* %pasid.addr, metadata !6074,\l... metadata !DIExpression()), !dbg !6075\l  %0 = load %struct.protection_domain*, %struct.protection_domain**\l... %domain.addr, align 8, !dbg !6076\l  %1 = load i32, i32* %pasid.addr, align 4, !dbg !6077\l  %call = call i32 @__flush_pasid(%struct.protection_domain* %0, i32 %1, i64\l... 9223372036854775807, i1 zeroext true) #8, !dbg !6078\l  ret i32 %call, !dbg !6079\l}"];
+}

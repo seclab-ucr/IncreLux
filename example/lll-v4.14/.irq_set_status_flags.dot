@@ -1,0 +1,5 @@
+digraph "CFG for 'irq_set_status_flags' function" {
+	label="CFG for 'irq_set_status_flags' function";
+
+	Node0x561b94a088c0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-i\l...rq_set_status_flags-0:\l  %irq.addr = alloca i32, align 4\l  %set.addr = alloca i64, align 8\l  store i32 %irq, i32* %irq.addr, align 4\l  call void @llvm.dbg.declare(metadata i32* %irq.addr, metadata !6072,\l... metadata !DIExpression()), !dbg !6073\l  store i64 %set, i64* %set.addr, align 8\l  call void @llvm.dbg.declare(metadata i64* %set.addr, metadata !6074,\l... metadata !DIExpression()), !dbg !6075\l  %0 = load i32, i32* %irq.addr, align 4, !dbg !6076\l  %1 = load i64, i64* %set.addr, align 8, !dbg !6077\l  call void @irq_modify_status(i32 %0, i64 0, i64 %1) #8, !dbg !6078\l  ret void, !dbg !6079\l}"];
+}

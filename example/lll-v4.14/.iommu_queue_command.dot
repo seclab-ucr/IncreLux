@@ -1,0 +1,5 @@
+digraph "CFG for 'iommu_queue_command' function" {
+	label="CFG for 'iommu_queue_command' function";
+
+	Node0x561b946db450 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-i\l...ommu_queue_command-0:\l  %iommu.addr = alloca %struct.amd_iommu*, align 8\l  %cmd.addr = alloca %struct.iommu_cmd*, align 8\l  store %struct.amd_iommu* %iommu, %struct.amd_iommu** %iommu.addr, align 8\l  call void @llvm.dbg.declare(metadata %struct.amd_iommu** %iommu.addr,\l... metadata !6077, metadata !DIExpression()), !dbg !6078\l  store %struct.iommu_cmd* %cmd, %struct.iommu_cmd** %cmd.addr, align 8\l  call void @llvm.dbg.declare(metadata %struct.iommu_cmd** %cmd.addr, metadata\l... !6079, metadata !DIExpression()), !dbg !6080\l  %0 = load %struct.amd_iommu*, %struct.amd_iommu** %iommu.addr, align 8, !dbg\l... !6081\l  %1 = load %struct.iommu_cmd*, %struct.iommu_cmd** %cmd.addr, align 8, !dbg\l... !6082\l  %call = call i32 @iommu_queue_command_sync(%struct.amd_iommu* %0,\l... %struct.iommu_cmd* %1, i1 zeroext true) #8, !dbg !6083\l  ret i32 %call, !dbg !6084\l}"];
+}

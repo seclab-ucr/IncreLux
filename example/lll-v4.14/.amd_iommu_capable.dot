@@ -1,0 +1,18 @@
+digraph "CFG for 'amd_iommu_capable' function" {
+	label="CFG for 'amd_iommu_capable' function";
+
+	Node0x561b944f6f90 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-a\l...md_iommu_capable-0:\l  %retval = alloca i1, align 1\l  %cap.addr = alloca i32, align 4\l  store i32 %cap, i32* %cap.addr, align 4\l  call void @llvm.dbg.declare(metadata i32* %cap.addr, metadata !6070,\l... metadata !DIExpression()), !dbg !6071\l  %0 = load i32, i32* %cap.addr, align 4, !dbg !6072\l  switch i32 %0, label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-amd_iommu_capable-4 [\l    i32 0, label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-amd_iommu_capable-1\l    i32 1, label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-amd_iommu_capable-2\l    i32 2, label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-amd_iommu_capable-3\l  ], !dbg !6073\l|{<s0>def|<s1>0|<s2>1|<s3>2}}"];
+	Node0x561b944f6f90:s0 -> Node0x561b94662c50;
+	Node0x561b944f6f90:s1 -> Node0x561b94662490;
+	Node0x561b944f6f90:s2 -> Node0x561b94662bb0;
+	Node0x561b944f6f90:s3 -> Node0x561b94662c00;
+	Node0x561b94662490 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-a\l...md_iommu_capable-1: \l  store i1 true, i1* %retval, align 1, !dbg !6074\l  br label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-amd_iommu_capable-5, !dbg !6074\l}"];
+	Node0x561b94662490 -> Node0x561b94662ca0;
+	Node0x561b94662bb0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-a\l...md_iommu_capable-2: \l  %1 = load i32, i32* @irq_remapping_enabled, align 4, !dbg !6076\l  %cmp = icmp eq i32 %1, 1, !dbg !6077\l  store i1 %cmp, i1* %retval, align 1, !dbg !6078\l  br label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-amd_iommu_capable-5, !dbg !6078\l}"];
+	Node0x561b94662bb0 -> Node0x561b94662ca0;
+	Node0x561b94662c00 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-a\l...md_iommu_capable-3: \l  store i1 false, i1* %retval, align 1, !dbg !6079\l  br label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-amd_iommu_capable-5, !dbg !6079\l}"];
+	Node0x561b94662c00 -> Node0x561b94662ca0;
+	Node0x561b94662c50 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-a\l...md_iommu_capable-4: \l  store i1 false, i1* %retval, align 1, !dbg !6080\l  br label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-amd_iommu_capable-5, !dbg !6080\l}"];
+	Node0x561b94662c50 -> Node0x561b94662ca0;
+	Node0x561b94662ca0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-a\l...md_iommu_capable-5: \l  %2 = load i1, i1* %retval, align 1, !dbg !6081\l  ret i1 %2, !dbg !6081\l}"];
+}

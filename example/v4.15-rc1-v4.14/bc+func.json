@@ -1,0 +1,4 @@
+{"function": "nvkm_object_map", "md": "object.bc"}
+{"function": "nvkm_object_unmap", "md": "object.bc"}
+{"function": "nvkm_object_dtor", "md": "object.bc"}
+{"function": "nvkm_ioctl_sclass", "md": "ioctl.bc"}

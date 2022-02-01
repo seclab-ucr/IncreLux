@@ -1,0 +1,24 @@
+digraph "CFG for 'wait_on_sem' function" {
+	label="CFG for 'wait_on_sem' function";
+
+	Node0x561b9488b020 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-w\l...ait_on_sem-0:\l  %retval = alloca i32, align 4\l  %sem.addr = alloca i64*, align 8\l  %i = alloca i32, align 4\l  store i64* %sem, i64** %sem.addr, align 8\l  call void @llvm.dbg.declare(metadata i64** %sem.addr, metadata !6072,\l... metadata !DIExpression()), !dbg !6073\l  call void @llvm.dbg.declare(metadata i32* %i, metadata !6074, metadata\l... !DIExpression()), !dbg !6075\l  store i32 0, i32* %i, align 4, !dbg !6075\l  br label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-wait_on_sem-1, !dbg !6076\l}"];
+	Node0x561b9488b020 -> Node0x561b9488b070;
+	Node0x561b9488b070 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-w\l...ait_on_sem-1: \l  %0 = load i64*, i64** %sem.addr, align 8, !dbg !6077\l  %1 = load volatile i64, i64* %0, align 8, !dbg !6078\l  %cmp = icmp eq i64 %1, 0, !dbg !6079\l  br i1 %cmp, label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-wait_on_sem-2, label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-wait_on_sem-3, !dbg !6080\l|{<s0>T|<s1>F}}"];
+	Node0x561b9488b070:s0 -> Node0x561b9488b0c0;
+	Node0x561b9488b070:s1 -> Node0x561b9488b110;
+	Node0x561b9488b0c0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-w\l...ait_on_sem-2: \l  %2 = load i32, i32* %i, align 4, !dbg !6081\l  %cmp1 = icmp slt i32 %2, 100000, !dbg !6082\l  br label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-wait_on_sem-3\l}"];
+	Node0x561b9488b0c0 -> Node0x561b9488b110;
+	Node0x561b9488b110 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-w\l...ait_on_sem-3: \l  %3 = phi i1 [ false,\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-wait_on_sem-1 ], [ %cmp1,\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-wait_on_sem-2 ], !dbg !6083\l  br i1 %3, label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-wait_on_sem-4, label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-wait_on_sem-5, !dbg !6076\l|{<s0>T|<s1>F}}"];
+	Node0x561b9488b110:s0 -> Node0x561b9488b160;
+	Node0x561b9488b110:s1 -> Node0x561b9488b1b0;
+	Node0x561b9488b160 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-w\l...ait_on_sem-4: \l  call void @__const_udelay(i64 4295) #8, !dbg !6084\l  %4 = load i32, i32* %i, align 4, !dbg !6090\l  %add = add i32 %4, 1, !dbg !6090\l  store i32 %add, i32* %i, align 4, !dbg !6090\l  br label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-wait_on_sem-1, !dbg !6076, !llvm.loop !6091\l}"];
+	Node0x561b9488b160 -> Node0x561b9488b070;
+	Node0x561b9488b1b0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-w\l...ait_on_sem-5: \l  %5 = load i32, i32* %i, align 4, !dbg !6093\l  %cmp2 = icmp eq i32 %5, 100000, !dbg !6095\l  br i1 %cmp2, label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-wait_on_sem-6, label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-wait_on_sem-7, !dbg !6096\l|{<s0>T|<s1>F}}"];
+	Node0x561b9488b1b0:s0 -> Node0x561b9488b200;
+	Node0x561b9488b1b0:s1 -> Node0x561b9488b250;
+	Node0x561b9488b200 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-w\l...ait_on_sem-6: \l  %call = call i32 (i8*, ...) @printk(i8* getelementptr inbounds ([42 x i8],\l... [42 x i8]* @.str.50, i64 0, i64 0)) #8, !dbg !6097\l  store i32 -5, i32* %retval, align 4, !dbg !6099\l  br label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-wait_on_sem-8, !dbg !6099\l}"];
+	Node0x561b9488b200 -> Node0x561b9488b2a0;
+	Node0x561b9488b250 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-w\l...ait_on_sem-7: \l  store i32 0, i32* %retval, align 4, !dbg !6100\l  br label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-wait_on_sem-8, !dbg !6100\l}"];
+	Node0x561b9488b250 -> Node0x561b9488b2a0;
+	Node0x561b9488b2a0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-w\l...ait_on_sem-8: \l  %6 = load i32, i32* %retval, align 4, !dbg !6101\l  ret i32 %6, !dbg !6101\l}"];
+}

@@ -1,0 +1,12 @@
+digraph "CFG for 'init_iommu_group' function" {
+	label="CFG for 'init_iommu_group' function";
+
+	Node0x561b94845be0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-i\l...nit_iommu_group-0:\l  %dev.addr = alloca %struct.device*, align 8\l  %group = alloca %struct.iommu_group*, align 8\l  store %struct.device* %dev, %struct.device** %dev.addr, align 8\l  call void @llvm.dbg.declare(metadata %struct.device** %dev.addr, metadata\l... !6070, metadata !DIExpression()), !dbg !6071\l  call void @llvm.dbg.declare(metadata %struct.iommu_group** %group, metadata\l... !6072, metadata !DIExpression()), !dbg !6073\l  %0 = load %struct.device*, %struct.device** %dev.addr, align 8, !dbg !6074\l  %call = call %struct.iommu_group* @iommu_group_get_for_dev(%struct.device*\l... %0) #8, !dbg !6075\l  store %struct.iommu_group* %call, %struct.iommu_group** %group, align 8,\l... !dbg !6076\l  %1 = load %struct.iommu_group*, %struct.iommu_group** %group, align 8, !dbg\l... !6077\l  %2 = bitcast %struct.iommu_group* %1 to i8*, !dbg !6077\l  %call1 = call zeroext i1 @IS_ERR(i8* %2) #8, !dbg !6079\l  br i1 %call1, label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-init_iommu_group-1, label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-init_iommu_group-2, !dbg !6080\l|{<s0>T|<s1>F}}"];
+	Node0x561b94845be0:s0 -> Node0x561b94847e70;
+	Node0x561b94845be0:s1 -> Node0x561b94847ec0;
+	Node0x561b94847e70 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-i\l...nit_iommu_group-1: \l  br label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-init_iommu_group-3, !dbg !6081\l}"];
+	Node0x561b94847e70 -> Node0x561b94847f10;
+	Node0x561b94847ec0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-i\l...nit_iommu_group-2: \l  %3 = load %struct.iommu_group*, %struct.iommu_group** %group, align 8, !dbg\l... !6082\l  call void @iommu_group_put(%struct.iommu_group* %3) #8, !dbg !6083\l  br label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-init_iommu_group-3, !dbg !6084\l}"];
+	Node0x561b94847ec0 -> Node0x561b94847f10;
+	Node0x561b94847f10 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-i\l...nit_iommu_group-3: \l  ret void, !dbg !6084\l}"];
+}

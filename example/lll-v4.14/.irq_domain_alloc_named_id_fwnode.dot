@@ -1,0 +1,5 @@
+digraph "CFG for 'irq_domain_alloc_named_id_fwnode' function" {
+	label="CFG for 'irq_domain_alloc_named_id_fwnode' function";
+
+	Node0x561b9471b250 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-i\l...rq_domain_alloc_named_id_fwnode-0:\l  %name.addr = alloca i8*, align 8\l  %id.addr = alloca i32, align 4\l  store i8* %name, i8** %name.addr, align 8\l  call void @llvm.dbg.declare(metadata i8** %name.addr, metadata !6072,\l... metadata !DIExpression()), !dbg !6073\l  store i32 %id, i32* %id.addr, align 4\l  call void @llvm.dbg.declare(metadata i32* %id.addr, metadata !6074, metadata\l... !DIExpression()), !dbg !6075\l  %0 = load i32, i32* %id.addr, align 4, !dbg !6076\l  %1 = load i8*, i8** %name.addr, align 8, !dbg !6077\l  %call = call %struct.fwnode_handle* @__irq_domain_alloc_fwnode(i32 2, i32\l... %0, i8* %1, i8* null) #8, !dbg !6078\l  ret %struct.fwnode_handle* %call, !dbg !6079\l}"];
+}

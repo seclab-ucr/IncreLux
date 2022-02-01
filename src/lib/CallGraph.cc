@@ -672,7 +672,7 @@ bool CallGraphPass::doInitialization(Module *M)
 		if (f.isIntrinsic())
 			continue;
 		if (!f.empty()) {
-		    //OP<<"funcToMd ["<<&f<<"] = "<<MName<<"\n";
+		    OP<<"funcToMd ["<<&f<<"] = "<<MName<<"\n";
 		    Ctx->funcToMd[&f] = MName;
 		}
 		if (preSumFuncs(&f)) {
@@ -705,16 +705,16 @@ bool CallGraphPass::doInitialization(Module *M)
 		#endif
 		if (f.hasExternalLinkage() && !f.empty()){
 			// external linkage always ends up with the function name
-			//OP<<"Ctx->Funcs.inset: ("<<f.getName().str()<<")"<<"\n";
+			// OP<<"Ctx->Funcs.inset: ("<<f.getName().str()<<")"<<"\n";
 			Ctx->Funcs[f.getName().str()] = &f;
 			Ctx->nameFuncs[f.getName().str()].insert(&f);
-			//OP<<"size of nameFuncs = "<<Ctx->nameFuncs.size()<<"\n";
+			// OP<<"size of nameFuncs = "<<Ctx->nameFuncs.size()<<"\n";
 		}
 		else
 		{
 			std::string fName = f.getName().str();
 			std::string mName = Ctx->ModuleMaps[M];//M->getName().str();
-			//OP<<"mName = "<<mName<<"\n";
+			// OP<<"fName = "<<fName<<", mName = "<<mName<<"\n";
 			size_t pos = mName.find("lll-");
 			std::string relMName = "";
 			bool slash = false;
@@ -727,19 +727,8 @@ bool CallGraphPass::doInitialization(Module *M)
 			/*reletive path of the file.*/
 			relMName += mName.substr(pos + 1);
 
-			//OP<<"Insert hash for "<<fName<<", "<<relMName<<"\n";
+			// OP<<"Insert hash for "<<fName<<", "<<relMName<<"\n";
 			Ctx->localFuncs[fHash(fName, relMName)] = &f;
-			/*
-		for (; pos < mName.size(); pos++) {
-       		    if (!slash && mName[pos] == "/") {
-           		slash = true;
-       		    }
-       		    else if (slash) {
-               		relMName += mName[pos];
-       		    }
-   		}*/
-			//OP<<"relMName: "<<relMName<<", fname = "<<fName<<"\n";
-			//OP<<"Hash :"<<fHash(fName, relMName)<<" : "<<&f<<"\n";
 		}
 	}
 

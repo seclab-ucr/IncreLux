@@ -394,8 +394,8 @@ void setUpOutput(GlobalContext *Ctx, std::string oldDir, std::string newDir) {
 	Ctx->newVersion=newDirVec.at(newDirVec.size()-1).substr(4);
 	Ctx->oldVersion=oldDirVec.at(oldDirVec.size()-1).substr(4);
 
-	diffMd="/../../example/"+Ctx->newVersion+"-"+Ctx->oldVersion+"/md.txt";
-	diffFunctions = "/../../example/"+Ctx->newVersion+"-"+Ctx->oldVersion+"/bc+func.json";	
+	diffMd="/home/IncreLux/example/"+Ctx->newVersion+"-"+Ctx->oldVersion+"/md.txt";
+	diffFunctions = "/home/IncreLux/example/"+Ctx->newVersion+"-"+Ctx->oldVersion+"/bc+func.json";	
 	Ctx->newVersion+="_";
 	Ctx->oldVersion+="_";
 	errs()<< Ctx->absPath<<"\n";
@@ -425,7 +425,7 @@ int setUpIncFunctions(GlobalContext *Ctx)
 	getline(ifile, jline);
 	while (!ifile.eof())
 	{
-		//OP<<"jline : "<<jline<<"\n";
+		OP<<"jline : "<<jline<<"\n";
 		std::string err;
 		const auto jstr = json11::Json::parse(jline, err);
 		std::string moduleName = jstr["md"].string_value();
@@ -446,26 +446,26 @@ int setUpIncFunctions(GlobalContext *Ctx)
 				Ctx->modifiedFuncs.insert(F);
 				Ctx->incCandiFuncs[F] = true;
 				candiFuncs.push(F);
-				//OP<<"candiFuncs.push("<<F->getName().str()<<")\n";
+				OP<<"candiFuncs.push("<<F->getName().str()<<")\n";
 			}
 		}
 		/* A local visible function*/
 		else
 		{
-			//OP<<"cal hash for "<<funcName<<", "<<moduleName<<"\n";
+			OP<<"cal hash for "<<funcName<<", "<<moduleName<<"\n";
 			size_t fh = fHash(funcName, moduleName);
 			if (Ctx->localFuncs.find(fh) != Ctx->localFuncs.end())
 			{
-				//OP << "==>moduleName2 = " << moduleName << ", funcName = " << funcName << "\n";
+				OP << "==>moduleName2 = " << moduleName << ", funcName = " << funcName << "\n";
 				llvm::Function *F = Ctx->localFuncs[fh];
 				Ctx->modifiedFuncs.insert(F);
 				Ctx->incCandiFuncs[F] = true;
 				candiFuncs.push(F);
-				//OP<<"2candiFuncs.push("<<F->getName().str()<<")\n";
+				OP<<"2candiFuncs.push("<<F->getName().str()<<")\n";
 			}
 			else
 			{
-				//OP << "Not found\n";
+				OP << "Not found\n";
 			}
 		}
 		getline(ifile, jline);
@@ -572,29 +572,7 @@ int setUpIncFunctions(GlobalContext *Ctx)
 	if (maxx > 0)
 		OP<<"maxx = "<<maxx<<",Func: "<<cc->getName().str()<<"\n";
 
-	/*for (auto item : Ctx->CallMaps)
-	  {
-	  llvm::Function *caller = item.first;
-	  if (!Ctx->incCandiFuncs.count(caller))
-	  {
-	  continue;
-	  }
-	  count = 0;
-	  for (auto caller : Ctx->CalledMaps[])
 
-	  for (auto callee : Ctx->CallMaps[caller])
-	  {
-	  if (Ctx->incCandiFuncs.count(callee))
-	  {
-	  count++;
-	  Ctx->candiCallMaps[caller].insert(callee);
-	  Ctx->candiCalledMaps[callee].insert(caller);
-	  }
-	  }
-	  if (count > maxx) {
-	  maxx = count;
-	  }
-	  }*/
 	/* 4. Using candiCallMaps to calculate the incFuncRemained. */
 	for (auto i : Ctx->candiCallMaps)
 	{
@@ -785,6 +763,7 @@ int main(int argc, char **argv)
 		OP << "Total " << InputFilenames.size() -1 << " file(s)\n";
 		GlobalCtx.absPath = argv[argc - 1];
 		GlobalCtx.outFolder = GlobalCtx.absPath+"/ubi-ia-out/";
+		GlobalCtx.jsonFile = GlobalCtx.outFolder+"/ubiWarn.json";
 		for (unsigned i = 0; i < InputFilenames.size(); ++i)
 		{
 			LLVMContext *LLVMCtx = new LLVMContext();

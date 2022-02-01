@@ -25,7 +25,7 @@
 #define max(a, b) ((a) > (b) ? (a) : (b))
 
 #define DEBUG_TITLE
-//#define _PRINT_INST
+#define _PRINT_INST
 #define RET_LIST
 #define ListProp
 //#define _RELATED
@@ -193,12 +193,7 @@ void FuncAnalysis::qualiInference()
 	    else{
 	    	in.assign(inQualiArray[BB].begin(), inQualiArray[BB].end());
 	    }
-	    //infcount++;
-	    //clock_t sTime, eTime;
-	    //sTime = clock();
             computeQualifier(I, in, out);
-	    //eTime = clock();
-	    //OP<<"time: "<<(double)(eTime - sTime) / CLOCKS_PER_SEC<<"\n";
             VisitIns.insert(I);
 #ifdef OUT
             for (unsigned i = 0; i < numNodes; i++)
@@ -207,7 +202,6 @@ void FuncAnalysis::qualiInference()
                     OP << "Node " << i << ": " << out[i] << "\n";
             }
 #endif
-            //OP<<"numNodes = "<<nodeFactory.getNumNodes()<<"\n";
             if (I == &BB->back())
             {
                 if (nQualiArray.find(I) != nQualiArray.end())
@@ -218,9 +212,7 @@ void FuncAnalysis::qualiInference()
                 outQualiArray[BB].assign(out.begin(), out.end());
             }
             nQualiArray[I].assign(out.begin(), out.end());
-            //OP<<"quali for constant: "<<nQualiArray[I][4]<<"\n";
         }
-        ////OP<<"4\n";
         if (changed)
         {
             for (auto si = succ_begin(BB), se = succ_end(BB); si != se; ++si)
@@ -954,11 +946,21 @@ void FuncAnalysis::computeQualifier(llvm::Instruction *I, std::vector<int> &in, 
         if (in.at(op0Index) == _UNKNOWN)
         {
             relatedNode[dstIndex].insert(op0Index);
+	    errs()<<"relatedNode["<<dstIndex<<"].insert("<<op0Index<<").\n";
+	    for (auto item : relatedNode[op0Index]) {
+	    	errs()<<"relatedNode["<<dstIndex<<"].insert("<<item<<"/";
+	    }
+	    errs()<<"\n";
             relatedNode[dstIndex].insert(relatedNode[op0Index].begin(), relatedNode[op0Index].end());
         }
         if (in.at(op1Index) == _UNKNOWN)
         {
             relatedNode[dstIndex].insert(op1Index);
+	    errs()<<"relatedNode["<<dstIndex<<"].insert("<<op1Index<<").\n";
+	    for (auto item : relatedNode[op1Index]) {
+                errs()<<"relatedNode["<<dstIndex<<"].insert("<<item<<"/";
+            }
+            errs()<<"\n";
             relatedNode[dstIndex].insert(relatedNode[op1Index].begin(), relatedNode[op1Index].end());
         }
 

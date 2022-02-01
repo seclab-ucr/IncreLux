@@ -1,0 +1,5 @@
+digraph "CFG for 'IS_ERR' function" {
+	label="CFG for 'IS_ERR' function";
+
+	Node0x561b946e1b40 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-I\l...S_ERR-0:\l  %ptr.addr = alloca i8*, align 8\l  store i8* %ptr, i8** %ptr.addr, align 8\l  call void @llvm.dbg.declare(metadata i8** %ptr.addr, metadata !6073,\l... metadata !DIExpression()), !dbg !6074\l  %0 = load i8*, i8** %ptr.addr, align 8, !dbg !6075\l  %1 = ptrtoint i8* %0 to i64, !dbg !6075\l  %2 = inttoptr i64 %1 to i8*, !dbg !6075\l  %3 = ptrtoint i8* %2 to i64, !dbg !6075\l  %cmp = icmp uge i64 %3, -4095, !dbg !6075\l  %lnot = xor i1 %cmp, true, !dbg !6075\l  %lnot1 = xor i1 %lnot, true, !dbg !6075\l  %lnot.ext = zext i1 %lnot1 to i32, !dbg !6075\l  %conv = sext i32 %lnot.ext to i64, !dbg !6075\l  %tobool = icmp ne i64 %conv, 0, !dbg !6075\l  ret i1 %tobool, !dbg !6076\l}"];
+}

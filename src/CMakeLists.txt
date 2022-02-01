@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.8)
-project(UBITECT)
+project(INCRELUX)
 
 find_package(LLVM REQUIRED CONFIG)
 #find_package(Boost REQUIRED COMPONENTS serialization) 

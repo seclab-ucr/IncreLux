@@ -1,0 +1,5 @@
+digraph "CFG for 'readl' function" {
+	label="CFG for 'readl' function";
+
+	Node0x561b94541e90 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-r\l...eadl-0:\l  %addr.addr = alloca i8*, align 8\l  %ret = alloca i32, align 4\l  store i8* %addr, i8** %addr.addr, align 8\l  call void @llvm.dbg.declare(metadata i8** %addr.addr, metadata !6076,\l... metadata !DIExpression()), !dbg !6077\l  call void @llvm.dbg.declare(metadata i32* %ret, metadata !6078, metadata\l... !DIExpression()), !dbg !6077\l  %0 = load i8*, i8** %addr.addr, align 8, !dbg !6077\l  %1 = bitcast i8* %0 to i32*, !dbg !6077\l  %2 = call i32 asm sideeffect \"movl $1,$0\",\l... \"=r,*m,~\{memory\},~\{dirflag\},~\{fpsr\},~\{flags\}\"(i32* %1) #7, !dbg !6077,\l... !srcloc !6079\l  store i32 %2, i32* %ret, align 4, !dbg !6077\l  %3 = load i32, i32* %ret, align 4, !dbg !6077\l  ret i32 %3, !dbg !6077\l}"];
+}

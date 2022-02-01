@@ -1,0 +1,12 @@
+digraph "CFG for '__list_del_entry' function" {
+	label="CFG for '__list_del_entry' function";
+
+	Node0x561b946c05e0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-_\l..._list_del_entry-0:\l  %entry.addr = alloca %struct.list_head*, align 8\l  store %struct.list_head* %entry1, %struct.list_head** %entry.addr, align 8\l  call void @llvm.dbg.declare(metadata %struct.list_head** %entry.addr,\l... metadata !6073, metadata !DIExpression()), !dbg !6074\l  %0 = load %struct.list_head*, %struct.list_head** %entry.addr, align 8, !dbg\l... !6075\l  %call = call zeroext i1 @__list_del_entry_valid(%struct.list_head* %0) #8,\l... !dbg !6077\l  br i1 %call, label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-__list_del_entry-2, label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-__list_del_entry-1, !dbg !6078\l|{<s0>T|<s1>F}}"];
+	Node0x561b946c05e0:s0 -> Node0x561b946c4840;
+	Node0x561b946c05e0:s1 -> Node0x561b946c47f0;
+	Node0x561b946c47f0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-_\l..._list_del_entry-1: \l  br label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-__list_del_entry-3, !dbg !6079\l}"];
+	Node0x561b946c47f0 -> Node0x561b946c4890;
+	Node0x561b946c4840 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-_\l..._list_del_entry-2: \l  %1 = load %struct.list_head*, %struct.list_head** %entry.addr, align 8, !dbg\l... !6080\l  %prev = getelementptr inbounds %struct.list_head, %struct.list_head* %1, i32\l... 0, i32 1, !dbg !6081\l  %2 = load %struct.list_head*, %struct.list_head** %prev, align 8, !dbg !6081\l  %3 = load %struct.list_head*, %struct.list_head** %entry.addr, align 8, !dbg\l... !6082\l  %next = getelementptr inbounds %struct.list_head, %struct.list_head* %3, i32\l... 0, i32 0, !dbg !6083\l  %4 = load %struct.list_head*, %struct.list_head** %next, align 8, !dbg !6083\l  call void @__list_del(%struct.list_head* %2, %struct.list_head* %4) #8, !dbg\l... !6084\l  br label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-__list_del_entry-3, !dbg !6085\l}"];
+	Node0x561b946c4840 -> Node0x561b946c4890;
+	Node0x561b946c4890 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-_\l..._list_del_entry-3: \l  ret void, !dbg !6085\l}"];
+}

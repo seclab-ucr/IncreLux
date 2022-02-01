@@ -1,0 +1,5 @@
+digraph "CFG for '__roundup_pow_of_two' function" {
+	label="CFG for '__roundup_pow_of_two' function";
+
+	Node0x561b9495dbd0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-_\l..._roundup_pow_of_two-0:\l  %n.addr = alloca i64, align 8\l  store i64 %n, i64* %n.addr, align 8\l  call void @llvm.dbg.declare(metadata i64* %n.addr, metadata !6073, metadata\l... !DIExpression()), !dbg !6074\l  %0 = load i64, i64* %n.addr, align 8, !dbg !6075\l  %sub = sub i64 %0, 1, !dbg !6076\l  %call = call i32 @fls_long(i64 %sub) #8, !dbg !6077\l  %sh_prom = zext i32 %call to i64, !dbg !6078\l  %shl = shl i64 1, %sh_prom, !dbg !6078\l  ret i64 %shl, !dbg !6079\l}"];
+}

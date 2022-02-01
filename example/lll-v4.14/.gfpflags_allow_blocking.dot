@@ -1,0 +1,5 @@
+digraph "CFG for 'gfpflags_allow_blocking' function" {
+	label="CFG for 'gfpflags_allow_blocking' function";
+
+	Node0x561b9494c200 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-g\l...fpflags_allow_blocking-0:\l  %gfp_flags.addr = alloca i32, align 4\l  store i32 %gfp_flags, i32* %gfp_flags.addr, align 4\l  call void @llvm.dbg.declare(metadata i32* %gfp_flags.addr, metadata !6074,\l... metadata !DIExpression()), !dbg !6075\l  %0 = load i32, i32* %gfp_flags.addr, align 4, !dbg !6076\l  %and = and i32 %0, 4194304, !dbg !6077\l  %tobool = icmp ne i32 %and, 0, !dbg !6078\l  %lnot = xor i1 %tobool, true, !dbg !6078\l  %lnot1 = xor i1 %lnot, true, !dbg !6079\l  ret i1 %lnot1, !dbg !6080\l}"];
+}

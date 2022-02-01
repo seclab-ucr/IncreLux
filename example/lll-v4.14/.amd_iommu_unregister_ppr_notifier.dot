@@ -1,0 +1,5 @@
+digraph "CFG for 'amd_iommu_unregister_ppr_notifier' function" {
+	label="CFG for 'amd_iommu_unregister_ppr_notifier' function";
+
+	Node0x561b946a33b0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-a\l...md_iommu_unregister_ppr_notifier-0:\l  %nb.addr = alloca %struct.notifier_block*, align 8\l  store %struct.notifier_block* %nb, %struct.notifier_block** %nb.addr, align 8\l  call void @llvm.dbg.declare(metadata %struct.notifier_block** %nb.addr,\l... metadata !6072, metadata !DIExpression()), !dbg !6073\l  %0 = load %struct.notifier_block*, %struct.notifier_block** %nb.addr, align\l... 8, !dbg !6074\l  %call = call i32\l... @atomic_notifier_chain_unregister(%struct.atomic_notifier_head*\l... @ppr_notifier, %struct.notifier_block* %0) #8, !dbg !6075\l  ret i32 %call, !dbg !6076\l}"];
+}

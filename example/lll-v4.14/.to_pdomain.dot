@@ -1,0 +1,9 @@
+digraph "CFG for 'to_pdomain' function" {
+	label="CFG for 'to_pdomain' function";
+
+	Node0x561b946a44a0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-t\l...o_pdomain-0:\l  %dom.addr = alloca %struct.iommu_domain*, align 8\l  %__mptr = alloca i8*, align 8\l  %tmp = alloca %struct.protection_domain*, align 8\l  store %struct.iommu_domain* %dom, %struct.iommu_domain** %dom.addr, align 8\l  call void @llvm.dbg.declare(metadata %struct.iommu_domain** %dom.addr,\l... metadata !6072, metadata !DIExpression()), !dbg !6073\l  call void @llvm.dbg.declare(metadata i8** %__mptr, metadata !6074, metadata\l... !DIExpression()), !dbg !6076\l  %0 = load %struct.iommu_domain*, %struct.iommu_domain** %dom.addr, align 8,\l... !dbg !6076\l  %1 = bitcast %struct.iommu_domain* %0 to i8*, !dbg !6076\l  store i8* %1, i8** %__mptr, align 8, !dbg !6076\l  br label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-to_pdomain-1, !dbg !6076\l}"];
+	Node0x561b946a44a0 -> Node0x561b946a7990;
+	Node0x561b946a7990 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-t\l...o_pdomain-1: \l  br label\l... %-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llb\l...c-to_pdomain-2, !dbg !6077\l}"];
+	Node0x561b946a7990 -> Node0x561b946a79e0;
+	Node0x561b946a79e0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-t\l...o_pdomain-2: \l  %2 = load i8*, i8** %__mptr, align 8, !dbg !6076\l  %add.ptr = getelementptr i8, i8* %2, i64 -32, !dbg !6076\l  %3 = bitcast i8* %add.ptr to %struct.protection_domain*, !dbg !6076\l  store %struct.protection_domain* %3, %struct.protection_domain** %tmp, align\l... 8, !dbg !6077\l  %4 = load %struct.protection_domain*, %struct.protection_domain** %tmp,\l... align 8, !dbg !6076\l  ret %struct.protection_domain* %4, !dbg !6079\l}"];
+}

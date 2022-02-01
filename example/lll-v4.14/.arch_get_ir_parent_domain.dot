@@ -1,0 +1,5 @@
+digraph "CFG for 'arch_get_ir_parent_domain' function" {
+	label="CFG for 'arch_get_ir_parent_domain' function";
+
+	Node0x561b9471eb40 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-a\l...rch_get_ir_parent_domain-0:\l  %0 = load %struct.irq_domain*, %struct.irq_domain** @x86_vector_domain,\l... align 8, !dbg !6073\l  ret %struct.irq_domain* %0, !dbg !6074\l}"];
+}

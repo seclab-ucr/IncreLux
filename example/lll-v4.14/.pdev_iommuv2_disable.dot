@@ -1,0 +1,5 @@
+digraph "CFG for 'pdev_iommuv2_disable' function" {
+	label="CFG for 'pdev_iommuv2_disable' function";
+
+	Node0x561b947ecb60 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-p\l...dev_iommuv2_disable-0:\l  %pdev.addr = alloca %struct.pci_dev*, align 8\l  store %struct.pci_dev* %pdev, %struct.pci_dev** %pdev.addr, align 8\l  call void @llvm.dbg.declare(metadata %struct.pci_dev** %pdev.addr, metadata\l... !6070, metadata !DIExpression()), !dbg !6071\l  %0 = load %struct.pci_dev*, %struct.pci_dev** %pdev.addr, align 8, !dbg !6072\l  call void @pci_disable_ats(%struct.pci_dev* %0) #8, !dbg !6073\l  %1 = load %struct.pci_dev*, %struct.pci_dev** %pdev.addr, align 8, !dbg !6074\l  call void @pci_disable_pri(%struct.pci_dev* %1) #8, !dbg !6075\l  %2 = load %struct.pci_dev*, %struct.pci_dev** %pdev.addr, align 8, !dbg !6076\l  call void @pci_disable_pasid(%struct.pci_dev* %2) #8, !dbg !6077\l  ret void, !dbg !6078\l}"];
+}

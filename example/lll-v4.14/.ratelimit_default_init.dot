@@ -1,0 +1,5 @@
+digraph "CFG for 'ratelimit_default_init' function" {
+	label="CFG for 'ratelimit_default_init' function";
+
+	Node0x561b9485ab20 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-r\l...atelimit_default_init-0:\l  %rs.addr = alloca %struct.ratelimit_state*, align 8\l  store %struct.ratelimit_state* %rs, %struct.ratelimit_state** %rs.addr,\l... align 8\l  call void @llvm.dbg.declare(metadata %struct.ratelimit_state** %rs.addr,\l... metadata !6072, metadata !DIExpression()), !dbg !6073\l  %0 = load %struct.ratelimit_state*, %struct.ratelimit_state** %rs.addr,\l... align 8, !dbg !6074\l  call void @ratelimit_state_init(%struct.ratelimit_state* %0, i32 1250, i32\l... 10) #8, !dbg !6075\l  ret void, !dbg !6076\l}"];
+}

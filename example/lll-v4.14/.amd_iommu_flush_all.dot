@@ -1,0 +1,5 @@
+digraph "CFG for 'amd_iommu_flush_all' function" {
+	label="CFG for 'amd_iommu_flush_all' function";
+
+	Node0x561b9464cdb0 [shape=record,label="{-data2-yizhuo-inc-experiment-experiment-lll-v4.14-drivers-iommu-amd_iommu.llbc-a\l...md_iommu_flush_all-0:\l  %iommu.addr = alloca %struct.amd_iommu*, align 8\l  %cmd = alloca %struct.iommu_cmd, align 4\l  store %struct.amd_iommu* %iommu, %struct.amd_iommu** %iommu.addr, align 8\l  call void @llvm.dbg.declare(metadata %struct.amd_iommu** %iommu.addr,\l... metadata !6070, metadata !DIExpression()), !dbg !6071\l  call void @llvm.dbg.declare(metadata %struct.iommu_cmd* %cmd, metadata\l... !6072, metadata !DIExpression()), !dbg !6077\l  call void @build_inv_all(%struct.iommu_cmd* %cmd) #8, !dbg !6078\l  %0 = load %struct.amd_iommu*, %struct.amd_iommu** %iommu.addr, align 8, !dbg\l... !6079\l  %call = call i32 @iommu_queue_command(%struct.amd_iommu* %0,\l... %struct.iommu_cmd* %cmd) #8, !dbg !6080\l  %1 = load %struct.amd_iommu*, %struct.amd_iommu** %iommu.addr, align 8, !dbg\l... !6081\l  %call1 = call i32 @iommu_completion_wait(%struct.amd_iommu* %1) #8, !dbg\l... !6082\l  ret void, !dbg !6083\l}"];
+}

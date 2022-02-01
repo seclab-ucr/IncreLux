@@ -27,9 +27,9 @@
 #define SERIALIZATION
 //#define OOB_IO
 //#define LOADSUM
-#define TIMING
+//#define TIMING
 #define RUN_ON_FUNC
-#define WRITEJSON
+//#define WRITEJSON
 //#define TIMING
 //#define TEST
 //#define READYLIST_DEBUG
@@ -53,23 +53,6 @@
 //#define OLD_COLLECT
 //#define CAL_STACKVAR
 using namespace llvm;
-//std::string testDir = "/data/home/yizhuo/And-UBITect/testset/8bce/Sum/";
-//std::string testDir = "/data/home/yizhuo/incExp/linux414k/Summary/";
-//std::string testDir = "/data/home/yizhuo/experiment/ccs/0113/Summary/";
-
-//std::string oldSDir = "/home/yizhuo/experiment/PerPatchTest/lll-414-def/Summary/";
-//std::string oldIOSDir = "/home/yizhuo/experiment/PerPatchTest/lll-414-def/IOSummary/";
-//std::string oldOOBSDir = "/home/yizhuo/experiment/PerPatchTest/lll-414-def/OOBSummary/";
-
-//std::string newSDir = "/home/UBITect/ia-out/Summary/";
-//std::string newIOSDir = "/home/UBITect/testfiles/ia-out/IOSummary/";
-//std::string newOOBSDir = "/home/UBITect/testfiles/ia-out/OOBSummary/";
-
-//std::string testDir = "/data/home/yizhuo/incExp/minitest/kernelDiff/414Summary/";
-//std::string newSDir = "/data/home/yizhuo/incExp/minitest/kernelDiff/415Summary/";
-//std::string newSDir = "/data/home/yizhuo/incExp/minitest/kernelDiff/4141Summary/";
-//std::string oldSDir = "/data/home/yizhuo/incExp/minitest/kernelDiff/414Summary/";
-//std::string incOldSDir = "/data/home/yizhuo/incExp/minitest/kernelDiff/415Summary/";
 static bool isCastingCompatibleType(Type *T1, Type *T2);
 std::set<std::string> timer_set{"common_timer_del", "common_timer_create", "common_hrtimer_rearm",
             "common_hrtimer_try_to_cancel", "common_hrtimer_arm","common_timer_get"};
@@ -385,14 +368,14 @@ void QualifierAnalysis::runInc() {
 		Summary oldIOSummary = Ctx->IOFSummaries[func];
 		Summary oldOOBSummary = Ctx->OOBFSummaries[func];
 		#endif
-		//OP<<"---oldSummary for "<<func->getName().str()<<"\n";
-		//oldSummary.summary();
+		OP<<"---oldSummary for "<<func->getName().str()<<"\n";
+		oldSummary.summary();
                 #ifdef RUN_ON_FUNC
                 runOnFunction(func, true);
                 #endif
                 Summary newSummary = Ctx->FSummaries[func];
-		//OP<<"---newSummary for "<<func->getName().str()<<"\n";
-                //newSummary.summary();
+		OP<<"---newSummary for "<<func->getName().str()<<"\n";
+                newSummary.summary();
 #ifdef OOB_IO
 		if (!newSummary.equal(oldSummary) || !Ctx->IOFSummaries[func].equal(oldIOSummary)
 			|| !Ctx->OOBFSummaries[func].equal(oldOOBSummary)) {
@@ -403,6 +386,7 @@ void QualifierAnalysis::runInc() {
 #else
 		if (!newSummary.equal(oldSummary)) {
 #endif
+		    OP<<"UBI Summary not equal.\n";
 	    	    /*put the caller into list for re-calculation*/
 	    	    for (auto item : Ctx->candiCalledMaps[func]) {
 			Ctx->incCandiFuncs[item] = true;
@@ -707,6 +691,7 @@ bool FuncAnalysis::run()
     std::string FScopeName = getScopeName(F, Ctx->funcToMd, Ctx->Funcs);
 #ifdef SERIALIZATION
     std::string sFile = Ctx->outFolder + "/Summary/" + FScopeName;
+    errs()<<sFile<<"\n";
     if (Ctx->incAnalysis)
     {
 	size_t pos = FScopeName.find(Ctx->oldVersion);
