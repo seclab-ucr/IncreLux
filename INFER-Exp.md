@@ -22,7 +22,7 @@ Capturing in make/cc mode...
 Found 1 source file to analyze in /opt/infer-linux64-v1.1.0/test/alias/infer-out
 1/1 [################################################################################] 100% 80.559ms
 
-test2.c:12: error: Uninitialized Value
+test1.c:12: error: Uninitialized Value
   Pulse found a potential uninitialized value `arg1` being read on on line 12.
   10. void caller() {
   11.     int arg, arg1;
@@ -31,7 +31,7 @@ test2.c:12: error: Uninitialized Value
   13.     if (arg++){}
   14. }
 
-test2.c:12: error: Uninitialized Value
+test1.c:12: error: Uninitialized Value
   The value read from arg1 was never initialized.
   10. void caller() {
   11.     int arg, arg1;
