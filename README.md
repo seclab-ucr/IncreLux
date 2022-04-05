@@ -10,7 +10,7 @@ Progressive Scrutiny: Incremental Detection of UBI bugs in the Linux Kernel
 |-Makefile: Used to compile IncreLux in src/  \
 |-path\_verify.py: Wrapper to run KLEE \
 |-getbclist.py: A wrapper to rename the basic block and collect the LLVM bitcode files for OS kernels \
-|-INFER-Exp.md: Some experiments regarding INFER's UBI detector.\
+|-INFER-Exp.md: Some experiments regarding INFER's UBI detector.
 
 ## Installation:
 ### Installation with cmake, and it's been tested on Ubuntu 20.04.
