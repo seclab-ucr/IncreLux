@@ -1,4 +1,11 @@
 This is the document for our experiment for INFER. INFER is a static analysis tool deveoped by Meta: https://github.com/facebook/infer.
+The infer version is v1.1.0.
+
+```sh
+$ infer --version
+Infer version v1.1.0
+Copyright 2009 - present Facebook. All Rights Reserved.
+```
 
 Exp1: 
 ```C
