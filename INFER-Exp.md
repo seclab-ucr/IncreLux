@@ -76,5 +76,60 @@ Found 1 source file to analyze in /opt/infer-linux64-v1.1.0/test/alias/infer-out
 
   No issues found  
 ```
-Infer would miss this serious bug in the latent mode.
+Infer would miss this serious bug in the latent mode. We futher investigate why INFER ignores this bug, we list the summary here and describe our understandings, it might be not 100% correct. 
+
+If we look at the memory model "mem" in the summary, v1 stands for the address of "arg", v5 stands for the pointer "arg" and the v6 stands for the object that "arg" points to. The "attrs" includes the properties that each variable should be, it does not contain the v6, which should be initialized properly before use. INFER fails to catch this bug in the latent mode mainly because of such incomplete summary.
+
+```sh
+--------------------------- 1 of 1 [nvisited:1 2 3 4] ---------------------------
+PRE:
+arg = val$1: ;
+arg|->val$2:
+POST 1 of 1:
+arg = val$1:; return = val$3: ;
+arg|->val$2:
+----------------------------------------------------------------
+Pulse: 1 pre/post(s)
+#0: unsat:false,
+    bo: { },
+    citv: { },
+    formula: known=true (no var=var) && true (no linear) && true (no atoms),
+             pruned=true (no atoms),
+             both=true (no var=var) && true (no linear) && true (no atoms)
+    { roots={ &arg=v1 };
+      mem  ={ v1 -> { * -> v5 }, v5 -> { * -> v6 } };
+      attrs={ };}
+    PRE=[{ roots={ &arg=v1 };
+           mem  ={ v1 -> { * -> v5 }, v5 -> { * -> v6 } };
+           attrs={ v1 -> { MustBeInitialized , MustBeValid  },
+                   v5 -> { MustBeInitialized , MustBeValid  } };}]
+    skipped_calls={ }
+    Topl=[  ]
+
+RacerD: 
+Threads: NoThread, Locks: 0 
+Accesses { } 
+Ownership: Unowned 
+Return Attribute: Nothing 
+Attributes: { } 
+
+Siof: (_|_,
+{ })
+Starvation: {thread= UnknownThread; return_attributes= Nothing;
+             critical_pairs={ };
+             scheduled_work= { };
+             attributes= { }}
+Uninitialised: 
+ Pre: { } 
+Post: { } 
+
+
+Procedure: caller
+void caller()
+Analyzed
+ERRORS: 
+WARNINGS: 
+FAILURE:NONE SYMOPS:14
+Biabduction: phase= RE_EXECUTION
+```
 
